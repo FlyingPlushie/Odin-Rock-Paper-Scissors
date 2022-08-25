@@ -81,6 +81,6 @@ function fiveRoundGame() {
       console.log("Computer wins with " + computer + " out of 5!");
 }
 
-fiveRoundGame();
+//fiveRoundGame();
 //console.log("Rock Paper Scissors Game V1.0");
 //console.log(gameCycle() + " wins!");

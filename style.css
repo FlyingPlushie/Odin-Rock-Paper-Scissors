@@ -1,0 +1,90 @@
+body {
+   margin: 0;
+}
+
+.header,
+.game-deck {
+   margin-top: 1%;
+   margin-left: 5%;
+   margin-right: 5%;
+}
+
+.header {
+   display: flex;
+   flex-grow: 1;
+   justify-content: center;
+   text-align: center;
+}
+
+.game-deck {
+   display: flex;
+   flex-direction: column;
+   justify-content: space-evenly;
+}
+
+.comp-side {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   text-align: center;
+}
+
+.centerpiece {
+   display: flex;
+   flex-direction: row;
+   justify-content: center; 
+   gap: 5%;
+   align-items: center;
+}
+
+.scoreboard {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   text-align: center;
+   border-radius: 10px;
+   border: 2px solid #3882F6;;
+}
+
+.match-display {
+   display: flex;
+   border-radius: 10px;
+   border: 2px solid #3882F6;
+   justify-content: center;
+   padding: 5px;
+}
+
+.player-side {
+   display: flex;
+   flex-direction: column;
+   justify-content: flex-start;
+   align-items: center;
+}
+
+.btn-panel {
+   display: flex;
+   flex-direction: column;
+   justify-content: space-evenly;
+   align-items: center;
+   gap: 10px;
+}
+
+.player-input {
+   display: flex;
+   justify-content: center;
+   gap: 10px;
+   padding: 10px;
+   border-radius: 10px;
+   border: 2px solid #3882F6;;
+}
+
+.settings {
+   display: flex;
+   flex-direction: column;
+   width: 100%;
+}
+
+#restart {
+   display: block;
+   width: 100%;
+}
