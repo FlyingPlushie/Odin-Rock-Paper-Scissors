@@ -73,10 +73,12 @@ body {
 }
 
 .choice.player {
+   visibility: hidden;
    color: #00e600;
 }
 
 .choice.comp {
+   visibility: hidden;
    color: #e60000;
 }
 
@@ -135,6 +137,7 @@ body {
    font-family: candy-shop, Helvetica, Arial, sans-serif;
    font-size: 60px;
    letter-spacing: 5px;
+   visibility: hidden;
 }
 
 .player-side {
