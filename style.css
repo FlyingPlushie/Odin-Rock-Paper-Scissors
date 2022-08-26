@@ -25,11 +25,13 @@
 
 body {
    margin: 0;
+   background: #1a1a1a;
+   color: #e6e6e6;
 }
 
 .header,
 .game-deck {
-   margin-top: 1%;
+   margin-top: 3%;
    margin-left: 5%;
    margin-right: 5%;
 }
@@ -48,7 +50,8 @@ body {
 .game-deck {
    display: flex;
    flex-direction: column;
-   justify-content: space-evenly;
+   justify-content: center;
+   gap: 20px;
 }
 
 .comp-side {
@@ -59,13 +62,22 @@ body {
    text-align: center;
 }
 
-.choice.comp {
+.choice {
    display: block;
    justify-content: center;
    font-family: aha-wow, Helvetica, Arial, sans-serif;
    font-size: 60px;
    margin: 0;
    border: 0;
+   padding: 0;
+}
+
+.choice.player {
+   color: #00e600;
+}
+
+.choice.comp {
+   color: #e60000;
 }
 
 .centerpiece {
@@ -98,10 +110,19 @@ body {
    border: 0;
 }
 
+.scoreboard.player .score {
+   color: #00e600;
+}
+
+.scoreboard.comp .score {
+   color: #e60000;
+}
+
 .announcer {
    font-family: skrapbook, Helvetica, Arial, sans-serif;
-   font-size: 30px;
+   font-size: 36px;
    margin: 0px;
+   padding: 0;
 }
 
 .match-display {
@@ -113,6 +134,7 @@ body {
 .match-state {
    font-family: candy-shop, Helvetica, Arial, sans-serif;
    font-size: 60px;
+   letter-spacing: 5px;
 }
 
 .player-side {
@@ -120,7 +142,6 @@ body {
    flex-direction: column;
    justify-content: flex-start;
    align-items: center;
-   gap: 15px;
 }
 
 .btn-panel {
@@ -129,6 +150,7 @@ body {
    justify-content: space-evenly;
    align-items: center;
    gap: 15px;
+   padding: 10px;
 }
 
 .player-input {
@@ -148,28 +170,49 @@ body {
 #restart {
    display: block;
    width: 100%;
+   color: red;
+   font-size: 40px;
+   
+   /*background-color: red;*/
+   background: repeating-linear-gradient(
+      45deg,
+      black,
+      black 30px,
+      #e6e600 30px,
+      #e6e600 60px
+   );
+}
+
+#restart:hover {
+   background: repeating-linear-gradient(
+      45deg,
+      black,
+      black 30px,
+      #ffff00 30px,
+      #ffff00 60px
+   );
 }
 
 .button {
    display: inline-block;
    padding: 15px 25px;
-   font-size: 24px;
+   font-size: 30px;
    font-family: skrapbook, monospace;
    cursor: pointer;
    text-align: center;
    text-decoration: none;
    outline: none;
-   color: #fff;
-   background-color: #4CAF50;
+   color: black;
+   background-color: #808080;
    border: none;
    border-radius: 15px;
    box-shadow: 0 9px #999;
  }
  
- .button:hover {background-color: #3e8e41}
+ .button:hover {background-color: #cccccc}
  
  .button:active {
-   background-color: #3e8e41;
+   background-color: #cccccc;
    box-shadow: 0 5px #666;
    transform: translateY(4px);
  }
