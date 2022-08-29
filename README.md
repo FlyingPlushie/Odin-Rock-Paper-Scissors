@@ -6,4 +6,4 @@ I've used [Obelix Pro](https://fontmeme.com/fonts/obelix-pro-font/), [Skrapbook]
 
 JS is fairly simple and nicely demonstrates basic DOM usage.
 
-Currently, the mobile display sucks. Will upgrade when I improve. 
+CSS works for desktop and mobile (portrait).
