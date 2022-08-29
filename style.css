@@ -31,18 +31,17 @@ body {
 
 .header,
 .game-deck {
-   margin-top: 3%;
    margin-left: 5%;
    margin-right: 5%;
 }
 
 .header {
    display: flex;
-   flex-grow: 1;
    justify-content: center;
    text-align: center;
    font-family: obelix-pro, Helvetica, Arial, sans-serif;
-   font-size: 30px;
+   font-size: 150%;
+   width: 100%;
    margin: 0;
    padding: 0;
 }
@@ -51,7 +50,7 @@ body {
    display: flex;
    flex-direction: column;
    justify-content: center;
-   gap: 20px;
+   gap: 20%;
 }
 
 .comp-side {
@@ -66,7 +65,7 @@ body {
    display: block;
    justify-content: center;
    font-family: aha-wow, Helvetica, Arial, sans-serif;
-   font-size: 60px;
+   font-size: 400%;
    margin: 0;
    border: 0;
    padding: 0;
@@ -92,24 +91,33 @@ body {
 
 .scoreboard {
    display: flex;
+   position: fixed;
    flex-direction: column;
    justify-content: space-evenly;
-   min-width: 150px;
+   width: 100%;
    text-align: center;
    font-family: komika-axis, Helvetica, Arial, sans-serif;
-   padding-left: 10px;
-   padding-right: 10px;
+   padding-left: 10%;
+   padding-right: 10%;
 }
 
 .scoreboard .score-label {
-   font-size: 30px;
+   font-size: 220%;
    margin: 0;
    border: 0;
 }
 .scoreboard .score {
-   font-size: 80px;
+   font-size: 500%;
    margin: 0;
    border: 0;
+}
+
+.scoreboard.player {
+   right: 17%;
+}
+
+.scoreboard.comp {
+   left: 17%;
 }
 
 .scoreboard.player .score {
@@ -122,67 +130,73 @@ body {
 
 .announcer {
    font-family: skrapbook, Helvetica, Arial, sans-serif;
-   font-size: 36px;
-   margin: 0px;
+   font-size: 250%;
+   margin: 0;
    padding: 0;
 }
 
 .match-display {
    display: flex;
    justify-content: center;
-   padding: 5px;
+   justify-items: center;
+   width: 300%;
+   height: 200%;
+   padding: 0.3%;
 }
 
 .match-state {
    font-family: candy-shop, Helvetica, Arial, sans-serif;
-   font-size: 60px;
-   letter-spacing: 5px;
-   visibility: hidden;
+   font-size: 400%;
+   letter-spacing: 1%;
+   width: max-content;
+   height: max-content;
+   visibility: visible;
 }
 
 .player-side {
    display: flex;
    flex-direction: column;
-   justify-content: flex-start;
+   justify-content: center;
    align-items: center;
 }
 
 .btn-panel {
    display: flex;
    flex-direction: column;
-   justify-content: space-evenly;
-   align-items: center;
-   gap: 15px;
-   padding: 10px;
+   justify-content: center;
+   justify-items: center;
+   width: 30%;
+   height: auto;
+   padding: 2%;
+   gap: 10%;
 }
 
 .player-input {
    display: flex;
-   flex: 1 1 0px;
-   min-width: 200px;
-   justify-content: space-evenly;
-   gap: 15px;
+   justify-content: center;
+   justify-items: center;
+   gap: 3%;
 }
 
 .settings {
    display: flex;
-   flex-direction: column;
-   width: 100%;
+   justify-content: center;
+   justify-items: center;
 }
 
 #restart {
-   display: block;
-   width: 100%;
    color: red;
-   font-size: 40px;
+   font-size: 250%;
+   width: 100%;
+   margin-top: 4%;
    
    /*background-color: red;*/
    background: repeating-linear-gradient(
       45deg,
       black,
-      black 30px,
-      #e6e600 30px,
-      #e6e600 60px
+      black 15%,
+      #e6e600 15%,
+      #e6e600 30%
    );
 }
 
@@ -190,16 +204,17 @@ body {
    background: repeating-linear-gradient(
       45deg,
       black,
-      black 30px,
-      #ffff00 30px,
-      #ffff00 60px
+      black 15%,
+      #ffff00 15%,
+      #ffff00 30%
    );
 }
 
 .button {
    display: inline-block;
-   padding: 15px 25px;
-   font-size: 30px;
+   width: 33%;
+   padding: 3% 5%;
+   font-size: 220%;
    font-family: skrapbook, monospace;
    cursor: pointer;
    text-align: center;
@@ -208,8 +223,8 @@ body {
    color: black;
    background-color: #808080;
    border: none;
-   border-radius: 15px;
-   box-shadow: 0 9px #999;
+   border-radius: 1.5vmin;
+   box-shadow: 0 10px #999;
  }
  
  .button:hover {background-color: #cccccc}
