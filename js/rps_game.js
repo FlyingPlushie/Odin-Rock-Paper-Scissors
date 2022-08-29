@@ -64,18 +64,18 @@ function gameInit() {
    gameState.cpuScore  = 0;
    updateScores();
    clearDeck();
-};
+}
 
 function flashState(state) {
-   state_display.textContent = state;
+   state_display.textContent = state.msg;
+   state_display.style.color = state.color;
    state_display.style.visibility = 'visible';
-   setTimeout(1000);
-   state_display.style.visibility = 'hidden';
 }
 
 function clearDeck() {
    player_choice.style.visibility = 'hidden';
    comp_choice.style.visibility   = 'hidden';
+   state_display.style.visibility = 'hidden';
 }
 
 function updateScores() {
@@ -93,22 +93,19 @@ function gameCycle(evt) {
    comp_choice.style.visibility   = 'visible';
    switch (whoWins(plrChoice, cpuChoice)) {
       case 0: { // player wins
-         flashState('YOU WIN!');
-         //clearDeck();
+         flashState({msg: 'YOU WIN!', color: '#00e600'});
          gameState.playerScore++;
          updateScores();
          break;
       }
       case 1: { // computer wins
-         flashState('YOU LOSE!');
-         //clearDeck();
+         flashState({msg: 'YOU LOSE!', color: '#e60000'});
          gameState.cpuScore++;
          updateScores();
          break;
       }
       case 2: { // tie
-         flashState('TIED!');
-         //clearDeck();
+         flashState({msg: 'TIED!', color: '#e6e6e6'});
          break;
       }
       default: {
@@ -116,61 +113,3 @@ function gameCycle(evt) {
       }
    }
 }
-
-// Used for console version
-/*
-function getPlayerChoice() {
-   let choice = prompt("Rock, paper or scissors?");
-   choice.toLowerCase();
-   while (true) {
-      if (choice === 'rock') {
-         choice = 0;
-         break;
-      }
-      else if (choice === 'paper') {
-         choice = 1;
-         break;
-      }
-      else if (choice === 'scissors') {
-         choice = 2;
-         break;
-      }
-      else {
-         choice = prompt("Please, enter 'rock', 'paper' or 'scissors', don't invent your own game.");
-         choice.toLowerCase();
-      }
-   }
-   return RoPaSci[choice];
-}
-*/
-
-// Used for console version 
-/*
-function gameCycle() {
-   let winner = whoWins(getComputerChoice(), getPlayerChoice());
-   let players = ["Computer", "Player"];
-   while (winner === 2) {
-      winner = whoWins(getComputerChoice(), getPlayerChoice());
-   }
-   return players[winner];
-}
-*/
-// Used for console version
-/*
-function fiveRoundGame() {
-   let player = 0;
-   let computer = 0;
-   for (let i = 0; i < 5; i++) {
-      let winner = gameCycle();
-      if (winner === "Player")
-         player++;
-      else
-         computer++;
-   }
-   
-   if (player > computer)
-      console.log("Player wins with " + player + " out of 5!");
-   else 
-      console.log("Computer wins with " + computer + " out of 5!");
-}
-*/
