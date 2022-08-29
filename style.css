@@ -23,34 +23,44 @@
    src: url("./fonts/aha-wow/aha-wow.ttf") format("truetype");
 }
 
-body {
-   margin: 0;
+
+html, body {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   justify-items: center;
    background: #1a1a1a;
    color: #e6e6e6;
+   margin: 0;
+   height: 100%;
 }
 
-.header,
-.game-deck {
-   margin-left: 5%;
-   margin-right: 5%;
+@media screen and (max-width: 992px) {
+   html, body {
+      width: 100vw;
+   }
 }
 
 .header {
    display: flex;
    justify-content: center;
-   text-align: center;
+   justify-items: center;
    font-family: obelix-pro, Helvetica, Arial, sans-serif;
    font-size: 150%;
    width: 100%;
-   margin: 0;
-   padding: 0;
+}
+
+h1 {
+   margin-top: 3%;
+   text-align: center;
 }
 
 .game-deck {
    display: flex;
    flex-direction: column;
-   justify-content: center;
-   gap: 20%;
+   justify-content: space-between;
+   justify-items: center;
+   height: 100%;
 }
 
 .comp-side {
@@ -62,13 +72,14 @@ body {
 }
 
 .choice {
-   display: block;
+   display: flex;
    justify-content: center;
+   text-align: center;
    font-family: aha-wow, Helvetica, Arial, sans-serif;
-   font-size: 400%;
-   margin: 0;
-   border: 0;
+   font-size: 250%;
    padding: 0;
+   margin: 0;
+   width: 100%;
 }
 
 .choice.player {
@@ -83,41 +94,52 @@ body {
 
 .centerpiece {
    display: flex;
-   flex-direction: row;
-   justify-content: center; 
-   gap: 5%;
+   justify-content: space-between; 
    align-items: center;
+   align-self: center;
+}
+
+@media screen and (max-width: 600px) {
+   .centerpiece {
+      width: 100%;
+   }
+   .scoreboard .score-label {
+      font-size: 120%;
+   }
+   .scoreboard .score {
+      font-size: 250%;
+   }
+}
+
+@media screen and (min-width: 600px) {
+   .centerpiece {
+      width: 50%;
+   }
+   .scoreboard .score-label {
+      font-size: 170%;
+   }
+   .scoreboard .score {
+      font-size: 300%;
+   }
 }
 
 .scoreboard {
    display: flex;
-   position: fixed;
    flex-direction: column;
-   justify-content: space-evenly;
-   width: 100%;
+   justify-content: space-between;
+   width: 30%;
    text-align: center;
    font-family: komika-axis, Helvetica, Arial, sans-serif;
-   padding-left: 10%;
-   padding-right: 10%;
 }
 
 .scoreboard .score-label {
-   font-size: 220%;
    margin: 0;
    border: 0;
 }
+
 .scoreboard .score {
-   font-size: 500%;
    margin: 0;
    border: 0;
-}
-
-.scoreboard.player {
-   right: 17%;
-}
-
-.scoreboard.comp {
-   left: 17%;
 }
 
 .scoreboard.player .score {
@@ -128,9 +150,11 @@ body {
    color: #e60000;
 }
 
+
+
 .announcer {
    font-family: skrapbook, Helvetica, Arial, sans-serif;
-   font-size: 250%;
+   font-size: 200%;
    margin: 0;
    padding: 0;
 }
@@ -139,24 +163,32 @@ body {
    display: flex;
    justify-content: center;
    justify-items: center;
-   width: 300%;
-   height: 200%;
-   padding: 0.3%;
+   max-width: 40%;
 }
 
 .match-state {
    font-family: candy-shop, Helvetica, Arial, sans-serif;
-   font-size: 400%;
+   text-align: center;
+   margin: 0;
    letter-spacing: 1%;
-   width: max-content;
-   height: max-content;
-   visibility: hidden;
+   visibility: visible;
 }
 
+@media screen and (max-width: 600px) {
+   .match-state {
+      font-size: 180%;
+   }
+}
+
+@media screen and (min-width: 600px) {
+   .match-state {
+      font-size: 300%;
+   }
+}
 .player-side {
    display: flex;
    flex-direction: column;
-   justify-content: center;
+   justify-content: flex-end;
    align-items: center;
 }
 
@@ -165,10 +197,20 @@ body {
    flex-direction: column;
    justify-content: center;
    justify-items: center;
-   width: 30%;
-   height: auto;
    padding: 2%;
    gap: 10%;
+}
+
+@media screen and (max-width: 600px) {
+   .btn-panel {
+      width: 100%;
+   }
+}
+
+@media screen and (min-width: 600px) {
+   .btn-panel {
+      width: 25%;
+   }
 }
 
 .player-input {
@@ -176,6 +218,7 @@ body {
    justify-content: center;
    justify-items: center;
    gap: 3%;
+   font-size: 85%;
 }
 
 .settings {
@@ -188,7 +231,7 @@ body {
    color: red;
    font-size: 250%;
    width: 100%;
-   margin-top: 4%;
+   margin-top: 5%;
    
    /*background-color: red;*/
    background: repeating-linear-gradient(
@@ -213,7 +256,7 @@ body {
 .button {
    display: inline-block;
    width: 33%;
-   padding: 3% 5%;
+   padding: 3% 4%;
    font-size: 220%;
    font-family: skrapbook, monospace;
    cursor: pointer;
